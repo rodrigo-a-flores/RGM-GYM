@@ -1,0 +1,39 @@
+.navbar-container .navbar{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #961d1d, #961d1d, #ffffff);
+    height: 65px;
+}
+
+.navbar-container .navbar ul{
+    display: flex;
+    list-style: none;
+    width: 60%;
+    height: auto;
+}
+
+.navbar-container .navbar ul li{
+    display: flex;
+    width: 25%;
+}
+
+.navbar-container .navbar ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+}
+
+.navbar-container .navbar ul li a:hover{
+    border-bottom: 4px solid #ffffff;
+    transition: 0.3s all ease;
+}
+.navbar-container .navbar img{
+    width: 60px;
+    height: auto;
+    /* fondo transparente */
+    filter: brightness(1);
+    mix-blend-mode: multiply;
+}
