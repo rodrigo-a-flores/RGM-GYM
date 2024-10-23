@@ -16,7 +16,7 @@ function ProductDetailsContainer() {
     }, [id])
 
     return (
-        <div>
+        <div className='container'>
             {item && <ProductDetails item={item} key={item.id}/>}            
         </div>
     )

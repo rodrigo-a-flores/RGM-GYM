@@ -1,0 +1,91 @@
+/* .container{
+    display: flex;
+    justify-content: center;
+    padding: 30px 50px;
+    margin: 0 auto;
+    background: red;
+}
+.product-details{
+    background: orange;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 400px;
+} */
+ /* Estilos generales para el contenedor */
+ body{
+ }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para la tarjeta del producto */
+.product-details {
+    display: flex;
+    min-height: 500px;
+    flex-direction: row;
+    width: 1200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen del producto */
+.img-container {
+    flex: 1;
+    height: 500px;
+    max-width: 50%;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Estilos para el texto */
+.text-container {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.text-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.text-container p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.text-container p:last-of-type {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.product-details button {
+    background-color: #d40a0a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.product-details button:hover {
+    background-color: #f00808;
+}
+
+.product-details span{
+    font-size: 20px;
+    margin: 0px 10px;
+}

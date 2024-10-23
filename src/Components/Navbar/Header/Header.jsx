@@ -1,16 +1,18 @@
 import React from 'react'
 import './Header.css'
-
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaYoutubeSquare } from "react-icons/fa";
 function Header() {
   return (
     <header>
-        <h1>RGM Gimnasio</h1>
+        <h1>RGM </h1>
         <nav>
             {/* Iconos de redes sociales y boton de registro y logueo */}
             <ul>
-                <li>Icono 1</li>
-                <li>Icono 2</li>
-                <li>Icono 3</li>
+                <li><FaFacebookSquare /></li>
+                <li><FaInstagramSquare /></li>
+                <li><FaYoutubeSquare /></li>
             </ul>
             <ul>
                 <button>Registrarse</button>

@@ -1,7 +1,7 @@
 .navbar-container .navbar{
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(45deg, #961d1d, #961d1d, #ffffff);
+    background-color: #961d1d;
     height: 65px;
 }
 
@@ -33,7 +33,6 @@
 .navbar-container .navbar img{
     width: 60px;
     height: auto;
+    border-radius: 100%;
     /* fondo transparente */
-    filter: brightness(1);
-    mix-blend-mode: multiply;
 }

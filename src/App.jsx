@@ -18,7 +18,7 @@ function App() {
                     <Route path="/" element={<MainPage />} />
                     <Route path="/plains" element={<Plains />} />
                     <Route path="/products" element={<ProductListContainer />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/contact" element={<Contact />} />                    
                     <Route path="/products/:id" element={<ProductDetailsContainer />} />
 
                     {/* Para Filtrar por categoria, debemos crear la ruta dinamica 
