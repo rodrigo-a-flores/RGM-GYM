@@ -26,6 +26,11 @@ header nav ul{
     padding: 0;
 }
 
+header nav ul button a{
+    text-decoration: none;
+    color: #fff;
+}
+
 header nav ul li{
     margin-right: 10px;
 }

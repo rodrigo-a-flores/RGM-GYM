@@ -3,6 +3,7 @@ import './Header.css'
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaYoutubeSquare } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 function Header() {
   return (
     <header>
@@ -15,8 +16,8 @@ function Header() {
                 <li><FaYoutubeSquare /></li>
             </ul>
             <ul>
-                <button>Registrarse</button>
-                <button>Iniciar Sesion</button>
+                <button><Link to="/register">Registrarse</Link></button>
+                <button><Link to="/login">Iniciar Sesion</Link></button>
             </ul>
         </nav>
     </header>
