@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../../../Helper/getData.js';
-import './Products.css';
 import ProductDetails from './ProductDetails.jsx';
+import './Products.css';
 
 function ProductDetailsContainer() {
     const [item, setItem] = useState(null);

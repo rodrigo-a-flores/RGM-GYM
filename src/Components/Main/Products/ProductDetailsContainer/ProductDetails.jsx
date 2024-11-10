@@ -1,12 +1,14 @@
 import { useState } from "react";
+import ProductCount from "./ProductCount.jsx";
 function ProductDetails( {item} ) {
-    const [addToCart, setAddToCart] = useState(0);
+    const [addToCart, setAddToCart] = useState(1);
     const handleAdd = () => {
-        setAddToCart(addToCart + 1);
+        addToCart < 10 && setAddToCart(addToCart + 1);
     }
     const handleRemove = () => {
-        setAddToCart(addToCart - 1);
+        addToCart > 1 && setAddToCart(addToCart - 1);
     }
+    
     return (
         <div>
             <section className="product-details">
@@ -17,11 +19,7 @@ function ProductDetails( {item} ) {
                     <h1>{item.product_name}</h1>
                     <p>{item.description}</p>
                     <p>{item.price}</p>
-                    <button onClick={addToCart > 0 ? handleRemove : null}>-</button>
-                    <span>{addToCart}</span>
-                    <button onClick={addToCart < 10 ? handleAdd : null}>+</button>
-                    <p></p>
-                    <button className="add-to-cart">Add to cart</button>
+                    <ProductCount addToCart={addToCart} handleAdd={handleAdd} handleRemove={handleRemove}/>
                 </div>
             </section>
             <section className="reviews">

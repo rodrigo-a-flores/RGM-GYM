@@ -7,7 +7,7 @@ header{
     padding: 10px;
 }
 
-header h1{
+header > h1{
     color: #ffffff;
     margin-right: 15px;
     text-shadow: 0px 6px 8px #961d1d;
