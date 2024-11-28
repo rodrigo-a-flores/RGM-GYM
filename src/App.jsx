@@ -13,7 +13,7 @@ import ProductDetailsContainer from './Components/Main/Products/ProductDetailsCo
 import Login from './AuthComponents/Login/Login.jsx';
 import Register from './AuthComponents/Register/Register.jsx';
 
-function App() {
+function App() {    
 
     return (
         <>
@@ -23,7 +23,7 @@ function App() {
                     <Route path="/" element={<MainPage />} />
                     <Route path="/plains" element={<Plains />} />
                     <Route path="/products" element={<ProductListContainer />} />
-                    <Route path="/contact" element={<Contact />} />                    
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="/products/:id" element={<ProductDetailsContainer />} />
 
                     {/* Para Filtrar por categoria, debemos crear la ruta dinamica 

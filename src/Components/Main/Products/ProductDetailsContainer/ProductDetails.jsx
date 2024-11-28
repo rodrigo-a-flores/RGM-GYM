@@ -13,10 +13,10 @@ function ProductDetails( {item} ) {
         <div>
             <section className="product-details">
                 <div className="img-container">
-                    <img src={item.img} alt={item.product_name} />
+                    <img src={item.imageUrl} alt={item.productName} />
                 </div>
                 <div className="text-container">
-                    <h1>{item.product_name}</h1>
+                    <h1>{item.productName}</h1>
                     <p>{item.description}</p>
                     <p>{item.price}</p>
                     <ProductCount addToCart={addToCart} handleAdd={handleAdd} handleRemove={handleRemove}/>

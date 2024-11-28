@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { getData } from '../../../Helper/getData.js';
+import { APIAllProducts } from '../../../Helper/getData.js';
 import ProductList from './ProductList.jsx';
 import './Products.css';
 // import { useParams } from 'react-router-dom';  Solo importar en caso de filtrar por categoria
 
 function ProductListContainer() {
     const [products, setProducts] = useState([]);
-
     /* Codigo para filtrar productos por categoria */
     /* 
         Tambien debemos tener en cuenta que para esto se debe crear un pequeño navbar dentro del ProductListContainer
@@ -25,17 +24,20 @@ function ProductListContainer() {
     // }, [category])
 
     useEffect(() => {
-        getData()
-            .then(res =>{
-                setProducts(res)
-            })
-    }, [])
-    
+        const fetchProducts = async () => {
+            const data = await APIAllProducts();
+            if (data) {
+                setProducts(data.data);
+            }
+        };
+        fetchProducts();
+    }, []);
+
     return (
         <>
-            <ProductList products={products}/>
+            <ProductList products={products} />
         </>
-    )
+    );
 }
 
-export default ProductListContainer
+export default ProductListContainer;

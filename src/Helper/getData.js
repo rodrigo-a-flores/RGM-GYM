@@ -1,22 +1,19 @@
-import data from '../assets/js/data.json';
+export const APIAllProducts = async () => {
+    try {
+        const response = await fetch('http://localhost:3000/api/products');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching all products:', error);
+    }
+};
 
-const getData = () => {
-    return new Promise((resolve, reject) => {
-        resolve(data);
-    })
-}
-const getProductById = (id) => {
-    return new Promise((resolve, reject) => {
-        const item = data.find(element => element.id === id);
-        if(item){
-            resolve(item)
-        }else{
-            reject({
-                error: 'Item not found'
-            })
-        }
-            
-    })
-}
-
-export {getData, getProductById}
+export const APIProductById = async (id) => {
+    try {
+        const response = await fetch(`http://localhost:3000/api/products/${id}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching product by ID (${id}):`, error);
+    }
+};

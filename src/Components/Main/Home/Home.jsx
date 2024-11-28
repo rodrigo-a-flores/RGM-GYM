@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css'
+import Contact from '../Contact/Contact.jsx'
 
 function Home() {
     return (
@@ -26,6 +27,8 @@ function Home() {
                     <img src="src/assets/img/team.jpg" alt="team" />
                 </div>
             </section>
+
+            <Contact />
 
             {/* <section className='services-container'>
                 <div>

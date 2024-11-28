@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import Register from '../Register/Register.jsx';
 import Login from '../Login/Login.jsx';
-import './HandleModal.css';
 
 function HandleModal( {identifier} ) {
     const [isModalOpen, setIsModalOpen] = useState(false);

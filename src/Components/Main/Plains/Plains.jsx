@@ -1,79 +1,65 @@
-import React from 'react'
+import React from 'react';
+import './Plains.css';
 
-function Plains() {
-    return (
-        <div>
-            <h1>Estos son nuestros planes</h1>
-            <section className='first-box'>
-                <div>
-                    <img src="" alt="" />
-                </div>
-                <div className="text">
-                    <p>¿Como se si es para mi?</p>
-                    <ul>
-                        <li>item 1</li>
-                        <li>item 2</li>
-                        <li>item 3</li>
-                        <li>item 4</li>
-                    </ul>
-                </div>
-            </section>
-            <section className='second-box'>
-                <div className="title">
-                    <p>¿Como funciona?</p>
-                </div>
-                <div className="a">
-                    <div className="box one">
-                        <div className="icon">
-                            <i>icono 1</i>
-                        </div>
-                        <div className="text">
-                            <p>texto 1</p>
-                        </div>
-                    </div>
-                    <div className="box two">
-                    <div className="icon">
-                            <i>icono 2</i>
-                        </div>
-                        <div className="text">
-                            <p>texto 2</p>
-                        </div>
-                    </div>
-                    <div className="box three">
-                    <div className="icon">
-                            <i>icono 3</i>
-                        </div>
-                        <div className="text">
-                            <p>texto 3</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className='third-box'>
-                <div className="title">
-                    <p>Elige uno de nuestros planes</p>                    
-                </div>
-                <div className="container">
-                    <div className="plan">
-                        <div className="plan-title"></div>
-                        <div className="plan-price"></div>
-                        <div className="plan-description"></div>
-                        <div className="plan-button">
-                            <button>Quiero este plan</button>
-                        </div>
-                    </div>
-                    <div className="plan">
-                        <div className="plan-title"></div>
-                        <div className="plan-price"></div>
-                        <div className="plan-description"></div>
-                        <div className="plan-button">
-                            <button>Quiero este plan</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    )
-}
+const PlanCard = ({ title, price, features, recommended }) => {
+  return (
+    <div className={`plan-card ${recommended ? 'recommended' : ''}`}>
+      <h3>{title}</h3>
+      <p className="price">S/ {price} <span>x mes</span></p>
+      <ul className="features">
+        {features.map((feature, index) => (
+          <li key={index} className={feature.included ? '' : 'not-included'}>
+            {feature.name}
+          </li>
+        ))}
+      </ul>
+      <button className="plan-button">Quiero este plan</button>
+    </div>
+  );
+};
 
-export default Plains
+const PlanOptions = () => {
+  const plans = [
+    {
+      title: 'Seven Fit Lite',
+      price: 97,
+      features: [
+        { name: 'Cuestionario previo', included: true },
+        { name: 'Sesión personal con el profesional', included: true },
+        { name: 'Entrenamiento semanal personalizado', included: true },
+        { name: 'Dieta mensual', included: true },
+        { name: 'Seguimiento de la evolución', included: true },
+        { name: 'Videollamada semanal de 1 hora para consultas y asesorías', included: false },
+      ],
+    },
+    {
+      title: 'Seven Fit Full',
+      price: 157,
+      features: [
+        { name: 'Cuestionario previo', included: true },
+        { name: 'Sesión personal con el profesional', included: true },
+        { name: 'Entrenamiento semanal personalizado', included: true },
+        { name: 'Dieta mensual', included: true },
+        { name: 'Seguimiento de la evolución', included: true },
+        { name: 'Videollamada semanal de 1 hora para consultas y asesorías', included: true },
+      ],
+      recommended: true,
+    },
+  ];
+
+  return (
+    <div className="plan-options">
+      {plans.map((plan, index) => (
+        <PlanCard 
+          key={index} 
+          title={plan.title} 
+          price={plan.price} 
+          features={plan.features}
+          recommended={plan.recommended}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default PlanOptions;
